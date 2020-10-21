@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">LanceDados</string>
+    <string name="etiqueta_botao_lancar_dados">Lançar Dados</string>
+    <string name="etiqueta_dado_2">TextView</string>
+</resources>
