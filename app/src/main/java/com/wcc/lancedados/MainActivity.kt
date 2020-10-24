@@ -3,6 +3,7 @@ package com.wcc.lancedados
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() {
@@ -11,21 +12,25 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val botaoLancarDados = findViewById<Button>(R.id.lanceDadosBotao)
-        val dado1 = findViewById<ImageView>(R.id.dice1)
-        val dado2 = findViewById<ImageView>(R.id.dice2)
+        val rollDiceButton = findViewById<Button>(R.id.rollDiceButton)
+        val dice1 = findViewById<ImageView>(R.id.dice1)
+        val dice2 = findViewById<ImageView>(R.id.dice2)
 
-        botaoLancarDados.setOnClickListener {
+        rollDiceButton.setOnClickListener {
 
-            dado1.setImageResource(lancaDado())
-            dado2.setImageResource(lancaDado())
+            dice1.setImageResource(rollDice())
+            dice2.setImageResource(rollDice())
         }
+
+        val playerName = getIntent().getStringExtra("playerName")
+        val playerNameTextView = findViewById<TextView>(R.id.playerNameText)
+        playerNameTextView.text = "Hi, $playerName"
     }
-    fun lancaDado(): Int{
-        return recuperaFaceDado(gerarNumero())
+    fun rollDice(): Int{
+        return getDice(getNum())
     }
-    fun recuperaFaceDado(valor: Int):Int {
-        return when(valor) {
+    fun getDice(value: Int):Int {
+        return when(value) {
             1 -> R.drawable.dice_1
             2 -> R.drawable.dice_2
             3 -> R.drawable.dice_3
@@ -35,12 +40,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun gerarNumero(): Int {
+    fun getNum(): Int {
         return (1..6).random()
     }
 
-    fun doWhenClickOnButton() {
-        //todo
-    }
 
 }

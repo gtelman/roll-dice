@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/lanceDadosBotao"
+        android:id="@+id/rollDiceButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="132dp"
@@ -24,7 +24,7 @@
         android:id="@+id/dice1"
         android:layout_width="129dp"
         android:layout_height="131dp"
-        app:layout_constraintBottom_toTopOf="@+id/lanceDadosBotao"
+        app:layout_constraintBottom_toTopOf="@+id/rollDiceButton"
         app:layout_constraintEnd_toStartOf="@+id/dice2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,12 +36,24 @@
         android:id="@+id/dice2"
         android:layout_width="129dp"
         android:layout_height="131dp"
-        app:layout_constraintBottom_toTopOf="@+id/lanceDadosBotao"
+        app:layout_constraintBottom_toTopOf="@+id/rollDiceButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/dice1"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.657"
         app:srcCompat="@drawable/dice_1" />
+
+    <TextView
+        android:id="@+id/playerNameText"
+        android:layout_width="128dp"
+        android:layout_height="34dp"
+        android:text="TextView"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/dice1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
